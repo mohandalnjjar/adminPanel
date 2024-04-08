@@ -1,4 +1,4 @@
-import 'package:admin_dash_board/features/home_feature/presentation/views/home_view.dart';
+import 'package:admin_dash_board/core/utils/app_router.dart';
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
@@ -12,9 +12,9 @@ class AdmidDashBoard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp.router(
+      routerConfig: AppRouterConfig.router,
       debugShowCheckedModeBanner: false,
-      home: HomeView(),
     );
   }
 }

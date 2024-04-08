@@ -1,9 +1,11 @@
 import 'package:admin_dash_board/core/utils/app_assets.dart';
+import 'package:admin_dash_board/core/utils/constance.dart';
 import 'package:admin_dash_board/features/home_feature/data/models/card_model.dart';
 import 'package:admin_dash_board/features/home_feature/presentation/widgets/card_item.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:go_router/go_router.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({
@@ -19,7 +21,9 @@ class HomeViewBody extends StatelessWidget {
         image: AppAssets.upload,
       ),
       CardModel(
-        () {},
+        () {
+          GoRouter.of(context).push(Constance.kSearchViewRouter);
+        },
         title: 'View All Products',
         image: AppAssets.cart,
       ),
