@@ -1,6 +1,6 @@
 import 'package:admin_dash_board/core/utils/app_styles.dart';
 import 'package:admin_dash_board/core/utils/constance.dart';
-import 'package:admin_dash_board/features/home_feature/data/models/card_model.dart';
+import 'package:admin_dash_board/features/home/data/models/card_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 

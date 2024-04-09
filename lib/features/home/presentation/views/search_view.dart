@@ -1,4 +1,4 @@
-import 'package:admin_dash_board/features/home_feature/presentation/widgets/search_view_body.dart';
+import 'package:admin_dash_board/features/home/presentation/widgets/search_view_body.dart';
 import 'package:flutter/material.dart';
 
 class SearchView extends StatelessWidget {

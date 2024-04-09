@@ -1,8 +1,9 @@
 import 'package:admin_dash_board/core/utils/app_assets.dart';
 import 'package:admin_dash_board/core/utils/app_styles.dart';
-import 'package:admin_dash_board/features/home_feature/data/product_model.dart';
+import 'package:admin_dash_board/features/home/data/product_model.dart';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class ProductItem extends StatelessWidget {
   const ProductItem({
@@ -39,25 +40,26 @@ class ProductItem extends StatelessWidget {
             const SizedBox(
               height: 5,
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 5),
-              child: Flexible(
-                flex: 3,
-                child: Text(
-                  productModel.title,
-                  style: AppStyles.styleReqular16,
-                  maxLines: 2,
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 5),
-              child: Flexible(
-                flex: 3,
-                child: Text(
-                  '${productModel.price} \$',
-                  style: AppStyles.styleSemiGreen17,
-                ),
+            Flexible(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 5),
+                    child: Text(
+                      productModel.title,
+                      style: AppStyles.styleReqular16,
+                      maxLines: 2,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 5),
+                    child: Text(
+                      '${productModel.price} \$',
+                      style: AppStyles.styleSemiGreen17,
+                    ),
+                  ),
+                ],
               ),
             ),
             const SizedBox(

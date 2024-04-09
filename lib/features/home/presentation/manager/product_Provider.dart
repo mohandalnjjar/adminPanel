@@ -1,4 +1,4 @@
-import 'package:admin_dash_board/features/home_feature/data/product_model.dart';
+import 'package:admin_dash_board/features/home/data/product_model.dart';
 import 'package:flutter/material.dart';
 import 'package:uuid/uuid.dart';
 

@@ -1,7 +1,7 @@
 import 'package:admin_dash_board/core/utils/widgets/custom_text_form_filed.dart';
-import 'package:admin_dash_board/features/home_feature/data/product_model.dart';
-import 'package:admin_dash_board/features/home_feature/presentation/manager/product_Provider.dart';
-import 'package:admin_dash_board/features/home_feature/presentation/widgets/product_item.dart';
+import 'package:admin_dash_board/features/home/data/product_model.dart';
+import 'package:admin_dash_board/features/home/presentation/manager/product_Provider.dart';
+import 'package:admin_dash_board/features/home/presentation/widgets/product_item.dart';
 import 'package:dynamic_height_grid_view/dynamic_height_grid_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';

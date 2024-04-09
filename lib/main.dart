@@ -1,5 +1,7 @@
 import 'package:admin_dash_board/core/utils/app_router.dart';
-import 'package:admin_dash_board/features/home_feature/presentation/manager/product_Provider.dart';
+import 'package:admin_dash_board/features/home/presentation/manager/product_Provider.dart';
+import 'package:admin_dash_board/features/theme/data/repositories/theme_repo.dart';
+import 'package:admin_dash_board/features/theme/presentation/manager/theme_provider/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -19,10 +21,19 @@ class AdmidDashBoard extends StatelessWidget {
         ChangeNotifierProvider(
           create: (context) => ProductProvider(),
         ),
+        ChangeNotifierProvider(
+          create: (context) => ThemeProvider()..getTheme(),
+        ),
       ],
-      child: MaterialApp.router(
-        routerConfig: AppRouterConfig.router,
-        debugShowCheckedModeBanner: false,
+      child: Consumer<ThemeProvider>(
+        builder: (BuildContext context, themeProvider, child) {
+          return MaterialApp.router(
+            theme: ThemeRepo.theme(
+                isDarkTheme: themeProvider.getIsDarkTheme, context: context),
+            routerConfig: AppRouterConfig.router,
+            debugShowCheckedModeBanner: false,
+          );
+        },
       ),
     );
   }
