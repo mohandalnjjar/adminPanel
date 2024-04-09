@@ -1,8 +1,9 @@
 import 'package:admin_dash_board/core/utils/app_styles.dart';
-import 'package:admin_dash_board/core/utils/constance.dart';
 import 'package:admin_dash_board/features/home/data/models/card_model.dart';
+import 'package:admin_dash_board/features/theme/presentation/manager/theme_provider/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:provider/provider.dart';
 
 class CardItem extends StatelessWidget {
   const CardItem({
@@ -22,7 +23,9 @@ class CardItem extends StatelessWidget {
             aspectRatio: 1.2 / 1,
             child: Container(
               decoration: BoxDecoration(
-                color: Constance.kSubPrimary,
+                color: Provider.of<ThemeProvider>(context).getIsDarkTheme
+                    ? const Color(0xff191233)
+                    : Colors.grey.withOpacity(0.1),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Column(
