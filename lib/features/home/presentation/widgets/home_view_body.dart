@@ -17,7 +17,7 @@ class HomeViewBody extends StatelessWidget {
     final List<CardModel> cardModel = [
       CardModel(
         () {
-          GoRouter.of(context).push(Constance.kUploadProductView);
+          GoRouter.of(context).push(Constance.kUploadProductViewRouter);
         },
         title: 'Upload Products',
         image: AppAssets.upload,

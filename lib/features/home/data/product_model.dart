@@ -1,5 +1,6 @@
 class ProductModel {
-  final String image, title, id;
+  final String image, title, id, category, description;
+  int qty;
   double price;
 
   ProductModel({
@@ -7,5 +8,8 @@ class ProductModel {
     required this.title,
     required this.price,
     required this.id,
+    required this.category,
+    required this.description,
+    this.qty = 1,
   });
 }

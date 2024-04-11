@@ -10,6 +10,8 @@ class ProductProvider with ChangeNotifier {
       title: 'new smart car bmw ',
       price: 221,
       id: const Uuid().v4(),
+      category: 'cars',
+      description: 'dd',
     ),
     ProductModel(
       image:
@@ -17,6 +19,8 @@ class ProductProvider with ChangeNotifier {
       title: 'I phone 14 pro',
       price: 15,
       id: const Uuid().v4(),
+      category: 'cars',
+      description: 'dd',
     ),
     ProductModel(
       image:
@@ -24,6 +28,8 @@ class ProductProvider with ChangeNotifier {
       title: 'I phone 14 pro',
       price: 155,
       id: const Uuid().v4(),
+      category: 'cars',
+      description: 'dd',
     ),
     ProductModel(
       image:
@@ -31,6 +37,8 @@ class ProductProvider with ChangeNotifier {
       title: 'I phone 14 pro',
       price: 533,
       id: const Uuid().v4(),
+      category: 'cars',
+      description: 'dd',
     ),
     ProductModel(
       image:
@@ -38,6 +46,8 @@ class ProductProvider with ChangeNotifier {
       title: 'I phone 14 pro',
       price: 1550,
       id: const Uuid().v4(),
+      category: 'cars',
+      description: 'dd',
     ),
     ProductModel(
       image:
@@ -45,6 +55,8 @@ class ProductProvider with ChangeNotifier {
       title: 'I phone 14 pro',
       price: 215,
       id: const Uuid().v4(),
+      category: 'cars',
+      description: 'dd',
     ),
   ];
 

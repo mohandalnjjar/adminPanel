@@ -24,56 +24,62 @@ class _AddImagePictureState extends State<AddImagePicture> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.sizeOf(context).height * .27,
-      child: AspectRatio(
-        aspectRatio: 1 / 1,
-        child: Column(
-          children: [
-            if (pickedImage == null) ...[
-              const SizedBox(
-                height: 10,
-              ),
-              Flexible(
-                child: Image.asset(
-                  AppAssets.photo,
-                  fit: BoxFit.contain,
-                ),
-              ),
-              TextButton(
-                onPressed: () async {
-                  await AppMethods.addImageDialog(
-                    context,
-                    camerFunc: () async {
-                      pickedImage =
-                          await picker.pickImage(source: ImageSource.camera);
-                      setState(() {
-                        context.pop();
-                      });
-                    },
-                    galleryFunc: () async {
-                      pickedImage =
-                          await picker.pickImage(source: ImageSource.gallery);
-                      setState(() {
-                        context.pop();
-                      });
-                    },
-                  );
-                },
-                child: Text(
-                  'Add Image',
-                  style: AppStyles.styleReqular16.copyWith(
-                    color: Colors.blue,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          if (pickedImage == null) ...[
+            const SizedBox(
+              height: 10,
+            ),
+            SizedBox(
+              height: MediaQuery.sizeOf(context).height * .20,
+              child: Flexible(
+                child: AspectRatio(
+                  aspectRatio: 1,
+                  child: Image.asset(
+                    AppAssets.photo,
+                    fit: BoxFit.contain,
                   ),
                 ),
               ),
-            ] else ...[
-              Flexible(
+            ),
+            TextButton(
+              onPressed: () async {
+                await AppMethods.addImageDialog(
+                  context,
+                  camerFunc: () async {
+                    pickedImage =
+                        await picker.pickImage(source: ImageSource.camera);
+                    setState(() {
+                      context.pop();
+                    });
+                  },
+                  galleryFunc: () async {
+                    pickedImage =
+                        await picker.pickImage(source: ImageSource.gallery);
+                    setState(() {
+                      context.pop();
+                    });
+                  },
+                );
+              },
+              child: Text(
+                'Add Image',
+                style: AppStyles.styleReqular16.copyWith(
+                  color: Colors.blue,
+                ),
+              ),
+            ),
+          ] else ...[
+            SizedBox(
+              height: MediaQuery.sizeOf(context).height * .27,
+              child: Flexible(
                 child: AspectRatio(
                   aspectRatio: 1 / 1,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(15),
                     child: Image.file(
-                      fit: BoxFit.cover,
+                      fit: BoxFit.fill,
                       File(
                         pickedImage!.path,
                       ),
@@ -81,48 +87,49 @@ class _AddImagePictureState extends State<AddImagePicture> {
                   ),
                 ),
               ),
-              Row(
-                children: [
-                  TextButton(
-                    onPressed: () async {
-                      await AppMethods.addImageDialog(
-                        context,
-                        camerFunc: () async {
-                          pickedImage = await picker.pickImage(
-                              source: ImageSource.camera);
-                          setState(() {
-                            context.pop();
-                          });
-                        },
-                        galleryFunc: () async {
-                          pickedImage = await picker.pickImage(
-                              source: ImageSource.gallery);
-                          setState(() {
-                            context.pop();
-                          });
-                        },
-                      );
-                    },
-                    child: Text(
-                      'Pick image',
-                      style: AppStyles.styleReqular16.copyWith(
-                        color: Colors.blue,
-                      ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextButton(
+                  onPressed: () async {
+                    await AppMethods.addImageDialog(
+                      context,
+                      camerFunc: () async {
+                        pickedImage =
+                            await picker.pickImage(source: ImageSource.camera);
+                        setState(() {
+                          context.pop();
+                        });
+                      },
+                      galleryFunc: () async {
+                        pickedImage =
+                            await picker.pickImage(source: ImageSource.gallery);
+                        setState(() {
+                          context.pop();
+                        });
+                      },
+                    );
+                  },
+                  child: Text(
+                    'Pick image',
+                    style: AppStyles.styleReqular16.copyWith(
+                      color: Colors.blue,
                     ),
                   ),
-                  TextButton(
-                    onPressed: () {
-                      setState(() {
-                        pickedImage = null;
-                      });
-                    },
-                    child: const Text('Remove image'),
-                  ),
-                ],
-              ),
-            ],
+                ),
+                TextButton(
+                  onPressed: () {
+                    setState(() {
+                      pickedImage = null;
+                    });
+                  },
+                  child: const Text('Remove image'),
+                ),
+              ],
+            ),
           ],
-        ),
+        ],
       ),
     );
   }

@@ -9,7 +9,9 @@ class Constance {
   static String kHomeViewRouter = '/';
   static String kSearchViewRouter = '/SearchViewRouter';
   static String kOrdersViewRouter = '/OrdersViewRouter';
-  static String kUploadProductView = '/UploadProductViewRouter';
+  static String kUploadProductViewRouter = '/UploadProductView';
+  static String kEditProductViewRouter = '/kEditProductView';
+
   static List<String> categoriesList = [
     'phones',
     'clothes',

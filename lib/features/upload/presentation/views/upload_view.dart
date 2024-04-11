@@ -3,8 +3,9 @@ import 'package:admin_dash_board/features/upload/presentation/widgets/upload_vie
 import 'package:flutter/material.dart';
 
 class UploadProductView extends StatelessWidget {
-  const UploadProductView({super.key});
-
+  const UploadProductView({
+    super.key,
+  });
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +16,7 @@ class UploadProductView extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: const UploadViewBody(),
+      body: UploadViewBody(),
     );
   }
 }

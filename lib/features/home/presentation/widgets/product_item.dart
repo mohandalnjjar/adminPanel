@@ -1,10 +1,12 @@
 import 'package:admin_dash_board/core/utils/app_assets.dart';
 import 'package:admin_dash_board/core/utils/app_styles.dart';
+import 'package:admin_dash_board/core/utils/constance.dart';
 import 'package:admin_dash_board/features/home/data/product_model.dart';
 import 'package:admin_dash_board/features/theme/presentation/manager/theme_provider/theme_provider.dart';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
 class ProductItem extends StatelessWidget {
@@ -16,7 +18,10 @@ class ProductItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        GoRouter.of(context)
+            .push(Constance.kEditProductViewRouter, extra: productModel);
+      },
       child: Container(
         decoration: BoxDecoration(
           color: Provider.of<ThemeProvider>(context).getIsDarkTheme
