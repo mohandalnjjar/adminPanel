@@ -1,3 +1,4 @@
+import 'package:admin_dash_board/core/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 
 class Constance {
@@ -7,7 +8,29 @@ class Constance {
   //routers
   static String kHomeViewRouter = '/';
   static String kSearchViewRouter = '/SearchViewRouter';
-  static String kOrdersViewRouter = '/OrdersView';
+  static String kOrdersViewRouter = '/OrdersViewRouter';
+  static String kUploadProductView = '/UploadProductViewRouter';
+  static List<String> categoriesList = [
+    'phones',
+    'clothes',
+    'beauty',
+    'shoes',
+    'funiture',
+  ];
+  static List<DropdownMenuItem<String>>? get dropdownMenuItems {
+    List<DropdownMenuItem<String>>? menuItems =
+        List<DropdownMenuItem<String>>.generate(
+      categoriesList.length,
+      (index) => DropdownMenuItem(
+        value: categoriesList[index],
+        child: Text(
+          categoriesList[index],
+          style: AppStyles.styleReqular16,
+        ),
+      ),
+    );
+    return menuItems;
+  }
 }
 
 abstract class AppColors {

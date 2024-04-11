@@ -4,7 +4,7 @@ class CustomTextFromField extends StatelessWidget {
   const CustomTextFromField({
     super.key,
     required this.hint,
-    required this.prefixIcon,
+    this.prefixIcon,
     this.keyBordType,
     this.onSaved,
     this.validator,
@@ -13,10 +13,12 @@ class CustomTextFromField extends StatelessWidget {
     this.focusNode,
     this.onChanged,
     this.suffixIcon,
+    this.contentPadding,
+    this.minLines, this.maxLines,
   });
 
   final String hint;
-  final Widget prefixIcon;
+  final Widget? prefixIcon;
   final Widget? suffixIcon;
 
   final void Function(String)? onChanged;
@@ -26,10 +28,16 @@ class CustomTextFromField extends StatelessWidget {
   final TextEditingController? controller;
   final void Function(String)? onFieldSubmitted;
   final FocusNode? focusNode;
+  final EdgeInsetsGeometry? contentPadding;
+  final int? minLines;
+    final int? maxLines;
+
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      maxLines: maxLines,
+      minLines: minLines,
       onChanged: onChanged,
       focusNode: focusNode,
       onFieldSubmitted: onFieldSubmitted,
@@ -38,6 +46,7 @@ class CustomTextFromField extends StatelessWidget {
       onSaved: onSaved,
       validator: validator,
       decoration: InputDecoration(
+        contentPadding: contentPadding,
         suffixIcon: suffixIcon,
         filled: true,
         prefixIcon: prefixIcon,
