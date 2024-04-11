@@ -1,14 +1,11 @@
 import 'package:admin_dash_board/core/utils/app_styles.dart';
 import 'package:admin_dash_board/core/utils/constance.dart';
 import 'package:admin_dash_board/core/utils/widgets/custom_text_form_filed.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:admin_dash_board/features/upload/presentation/widgets/add_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class UploadViewBody extends StatefulWidget {
-  const UploadViewBody({
-    super.key,
-  });
+  const UploadViewBody({super.key});
 
   @override
   State<UploadViewBody> createState() => _UploadViewBodyState();
@@ -23,18 +20,29 @@ class _UploadViewBodyState extends State<UploadViewBody> {
         padding: const EdgeInsets.symmetric(horizontal: 8),
         child: Column(
           children: [
+            const SizedBox(
+              height: 10,
+            ),
+            const AddImagePicture(),
             DropdownButton(
-                hint: const Text(
-                  'Choose category',
-                  style: AppStyles.styleReqular16,
-                ),
-                value: _categoryValue,
-                items: Constance.dropdownMenuItems,
-                onChanged: (String? value) {
-                  setState(() {
+              dropdownColor: Theme.of(context).scaffoldBackgroundColor,
+              hint: const Text(
+                'Choose category',
+                style: AppStyles.styleReqular16,
+              ),
+              value: _categoryValue,
+              items: Constance.dropdownMenuItems,
+              onChanged: (String? value) {
+                setState(
+                  () {
                     _categoryValue = value;
-                  });
-                }),
+                  },
+                );
+              },
+            ),
+            const SizedBox(
+              height: 10,
+            ),
             const CustomTextFromField(
               hint: 'Product title',
               keyBordType: TextInputType.text,
