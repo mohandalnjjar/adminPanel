@@ -1,4 +1,5 @@
 import 'package:admin_dash_board/core/utils/app_styles.dart';
+import 'package:admin_dash_board/core/utils/constance.dart';
 import 'package:admin_dash_board/features/home/data/models/card_model.dart';
 import 'package:admin_dash_board/features/theme/presentation/manager/theme_provider/theme_provider.dart';
 import 'package:flutter/material.dart';
@@ -24,8 +25,8 @@ class CardItem extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                 color: Provider.of<ThemeProvider>(context).getIsDarkTheme
-                    ? const Color(0xff191233)
-                    : Colors.grey.withOpacity(0.1),
+                    ? AppColors.kdarkCardColor
+                    : AppColors.kLightCardColor,
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Column(

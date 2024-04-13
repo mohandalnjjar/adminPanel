@@ -9,15 +9,17 @@ class EditProductView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            'Edit Product',
-            style: AppStyles.styleSemiBold24,
-          ),
-          centerTitle: true,
+      appBar: AppBar(
+        title: const Text(
+          'Edit Product',
+          style: AppStyles.styleSemiBold24,
         ),
-        body: EditViewBody(
-          productModel: productModel,
-        ));
+        centerTitle: true,
+      ),
+      body: EditViewBody(
+        productModel: productModel,
+      ),
+    
+    );
   }
 }

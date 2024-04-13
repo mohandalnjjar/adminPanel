@@ -14,7 +14,9 @@ class CustomTextFromField extends StatelessWidget {
     this.onChanged,
     this.suffixIcon,
     this.contentPadding,
-    this.minLines, this.maxLines,
+    this.minLines,
+    this.maxLines,
+    this.lableText,
   });
 
   final String hint;
@@ -30,9 +32,8 @@ class CustomTextFromField extends StatelessWidget {
   final FocusNode? focusNode;
   final EdgeInsetsGeometry? contentPadding;
   final int? minLines;
-    final int? maxLines;
-
-
+  final int? maxLines;
+  final Widget? lableText;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -46,6 +47,7 @@ class CustomTextFromField extends StatelessWidget {
       onSaved: onSaved,
       validator: validator,
       decoration: InputDecoration(
+        label: lableText,
         contentPadding: contentPadding,
         suffixIcon: suffixIcon,
         filled: true,

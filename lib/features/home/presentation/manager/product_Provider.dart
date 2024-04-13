@@ -10,7 +10,7 @@ class ProductProvider with ChangeNotifier {
       title: 'new smart car bmw ',
       price: 221,
       id: const Uuid().v4(),
-      category: 'cars',
+      category: 'phones',
       description: 'dd',
     ),
     ProductModel(
